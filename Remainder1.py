@@ -1,9 +1,26 @@
-from tkinter iport *
+from tkinter import *
 from tkinter import messagebox as mb
 from tkinter import simpledialog as sd
 import datetime
 import time
 import pygame
+
+
+def set():
+    rem = sd.askstring("Время напоминания", "введите время напоминания в формате чч:мм (в 24 часовом формате)")
+    if rem:
+        try:
+            hour = int(rem.split(":")[0])
+            minute = int(rem.split(":")[1])
+            now = datetime.datetime.now()
+            print(now)
+            dt = now.replace(hour=hour, minute=minute)
+            print(dt)
+            t = dt.timestamp()
+            print(t)
+        except Exception as e:
+            mb.showerror("Ошибка!", f"Произошла ошибка {e}")
+
 
 window = Tk()
 window.title("Напоминание")
