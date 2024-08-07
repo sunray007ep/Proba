@@ -23,7 +23,7 @@ def set():
             mb.showerror("Ошибка!", f"Произошла ошибка {e}")
 
 
- def check():
+def check():
      global t
      if t:
          now = time.time()
@@ -34,7 +34,8 @@ def set():
 
 
 def play_snd():
-    pygame.mixer.music.load("remainder.mp3")
+    pygame.mixer.init()
+    pygame.mixer.music.load("AUDIO-2024-08-07-16-46-22.mp3")
     pygame.mixer.music.play()
 
 
