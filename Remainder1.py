@@ -33,6 +33,11 @@ def set():
      window.after(10000, check)
 
 
+def play_snd():
+    pygame.mixer.music.load("remainder.mp3")
+    pygame.mixer.music.play()
+
+
 
 
 window = Tk()
