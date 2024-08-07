@@ -4,6 +4,7 @@ from tkinter import simpledialog as sd
 import datetime
 import time
 import pygame
+
 t = 0
 
 def set():
@@ -15,7 +16,7 @@ def set():
             minute = int(rem.split(":")[1])
             now = datetime.datetime.now()
             print(now)
-            dt = now.replace(hour=hour, minute=minute)
+            dt = now.replace(hour=hour, minute=minute, second=0)
             print(dt)
             t = dt.timestamp()
             print(t)
@@ -39,13 +40,15 @@ def play_snd():
     pygame.mixer.music.play()
 
 
-
-
 window = Tk()
 window.title("Напоминание")
-label = Label(text="Установите напоминание")
+label = Label(text="Установите напоминание", fond=("Arial,14"))
 label.pack(pady=10)
 set_button = Button(text="Установить напоминание", command=set)
 set_button.pack()
+
+
+check()
+
 
 window.mainloop()
